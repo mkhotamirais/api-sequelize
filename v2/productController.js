@@ -1,9 +1,13 @@
-import { Products } from "./models.js";
+import { Products, Users } from "./models.js";
 
 export const readProducts = async (req, res) => {
+  // const { userId } = req.query;
   try {
     const data = await Products.findAll({
       order: [["createdAt", "DESC"]],
+      attributes: { exclude: ["userId"] },
+      include: [{ model: Users, attributes: ["id", "name", "email", "role"] }],
+      // where: { userId },
       // attributes: ['id']
       // attributes: {exclude: ['id']}
     });

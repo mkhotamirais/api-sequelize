@@ -4,6 +4,7 @@ import { DataTypes } from "sequelize";
 const Products = db.define(
   "V1Product",
   {
+    // id: { type: DataTypes.STRING, defaultValue: DataTypes.UUIDV4, allowNull: false, validate: { notEmpty: true } },
     // id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     // // sebenarnya id sudah otomatis dibuatkan, jadi tidak ditambah id juga tidak apa apa
     name: { type: DataTypes.STRING, allowNull: false, unique: true },
