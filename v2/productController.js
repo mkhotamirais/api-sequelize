@@ -31,10 +31,12 @@ export const readProductById = async (req, res) => {
 };
 
 export const createProduct = async (req, res) => {
+  const { id: userId } = req.user;
   const { name, price } = req.body;
   if (!name) return res.status(400).json({ error: `Name is required` });
   if (!price) return res.status(400).json({ error: `Price is required` });
   try {
+    req.body.userId = userId;
     await Products.create(req.body);
     res.status(201).json({ message: `Create ${name} success` });
   } catch (error) {

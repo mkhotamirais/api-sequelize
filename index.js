@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 
 import v1Router from "./v1/router.js";
 import v2Router from "./v2/router.js";
+import { corsOptions, credentials } from "./mw.js";
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -20,7 +21,9 @@ const app = express();
 //   await V2Products.sync();
 // })();
 
-app.use(cors());
+app.use(credentials);
+app.use(cors(corsOptions));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

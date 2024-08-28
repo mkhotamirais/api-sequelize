@@ -3,7 +3,9 @@ import { genSalt, hash } from "bcrypt";
 
 export const readUsers = async (req, res) => {
   try {
-    const users = await Users.findAll();
+    const users = await Users.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     res.status(200).json(users);
   } catch (error) {
     console.log(error);
