@@ -10,12 +10,12 @@ import { corsOptions, credentials } from "./middleware.js";
 import v1Router from "./app/v1/router.js";
 // import v2Router from "./app/v2/router.js";
 
-// (async () => {
-//   await db.authenticate();
-//   await v1Products.sync();
-//   // await v2Users.sync();
-//   // await v2Products.sync();
-// })();
+(async () => {
+  await db.authenticate();
+  await v1Products.sync();
+  // await v2Users.sync();
+  // await v2Products.sync();
+})();
 
 const app = express();
 const port = process.env.PORT || 3000;
