@@ -12,11 +12,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 const dirName = path.dirname(fileURLToPath(import.meta.url));
 
-// (async () => {
-//   await db.authenticate();
-//   await v1Products.sync();
-//   await v2Products.sync();
-// })();
+(async () => {
+  await db.authenticate();
+  await v1Products.sync();
+  await v2Products.sync();
+})();
 
 const app = express();
 const port = process.env.PORT || 3000;
