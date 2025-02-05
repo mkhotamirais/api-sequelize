@@ -1,8 +1,8 @@
 import express from "express";
 import "dotenv/config";
-// import db from "./config/index.js";
-// import { Products as v1Products } from "./app/v1/models.js";
-// import { Products as v2Products } from "./app/v2/models.js";
+import db from "./config/index.js";
+import { Products as v1Products } from "./app/v1/models.js";
+import { Products as v2Products } from "./app/v2/models.js";
 import cors from "cors";
 import { corsOptions, credentials } from "./middleware.js";
 import v1Router from "./app/v1/router.js";
