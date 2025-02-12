@@ -7,29 +7,29 @@ import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
 const dirName = path.dirname(fileURLToPath(import.meta.url));
 
-// import db from "./config/index.js";
-// import { Products as v1Products } from "./app/v1/models.js";
-// import { Products as v2Products } from "./app/v2/models.js";
-// import { Tags as v3Tags } from "./app/v3/models.js";
-// import { Categories as v3Categories } from "./app/v3/models.js";
-// import { Users as v3Users } from "./app/v3/models.js";
-// import { Products as v3Products } from "./app/v3/models.js";
-// import { ProductTags as v3ProductTags } from "./app/v3/models.js";
+import db from "./config/index.js";
+import { Products as v1Products } from "./app/v1/models.js";
+import { Products as v2Products } from "./app/v2/models.js";
+import { Tags as v3Tags } from "./app/v3/models.js";
+import { Categories as v3Categories } from "./app/v3/models.js";
+import { Users as v3Users } from "./app/v3/models.js";
+import { Products as v3Products } from "./app/v3/models.js";
+import { ProductTags as v3ProductTags } from "./app/v3/models.js";
 
 import v1Router from "./app/v1/router.js";
 import v2Router from "./app/v2/router.js";
 import v3Router from "./app/v3/router.js";
 
-// (async () => {
-//   await db.authenticate();
-//   await v1Products.sync();
-//   await v2Products.sync();
-//   await v3Users.sync();
-//   await v3Tags.sync();
-//   await v3Categories.sync();
-//   await v3Products.sync();
-//   await v3ProductTags.sync();
-// })();
+(async () => {
+  await db.authenticate();
+  // await v1Products.sync();
+  // await v2Products.sync();
+  await v3Users.sync();
+  await v3Tags.sync();
+  await v3Categories.sync();
+  await v3Products.sync();
+  await v3ProductTags.sync();
+})();
 
 const app = express();
 const port = process.env.PORT || 3000;
