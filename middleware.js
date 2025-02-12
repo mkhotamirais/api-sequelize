@@ -4,7 +4,6 @@ export const credentials = (req, res, next) => {
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.header("Access-Control-Allow-Credentials", true);
-    // res.header("Access-Control-Allow-Origin", allowedOrigins);
   }
   next();
 };
@@ -15,7 +14,6 @@ export const corsOptions = {
       ? callback(null, true)
       : callback(new Error("Not allowed by CORS"));
   },
-  // credentials: true,
-  credentials: false,
+  credentials: true,
   optionsSuccessStatus: 200,
 };

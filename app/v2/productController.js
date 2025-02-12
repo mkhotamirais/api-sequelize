@@ -40,7 +40,7 @@ export const createProduct = async (req, res) => {
       res.status(201).json({ message: `Create ${name} success` });
     } catch (error) {
       console.log(error);
-      res.status(400).json({ error: error.message });
+      res.status(400).json({ error: error?.errors?.[0]?.message || error.message });
     }
   }
 };
