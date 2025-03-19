@@ -10,6 +10,7 @@ const db_name = process.env.DB_NAME;
 const db = new Sequelize(db_name, db_user, db_pass, {
   host: db_host,
   dialect: "mysql",
+  dialectModule: require("mysql2"), // 👈 Pastikan ini ada!
   logging: console.log("Database connected"),
 });
 
