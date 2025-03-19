@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import "dotenv/config";
+import mysql2 from "mysql2";
 
 const db_host = process.env.DB_HOST;
 const db_user = process.env.DB_USER;
@@ -10,7 +11,7 @@ const db_name = process.env.DB_NAME;
 const db = new Sequelize(db_name, db_user, db_pass, {
   host: db_host,
   dialect: "mysql",
-  dialectModule: require("mysql2"), // 👈 Pastikan ini ada!
+  dialectModule: mysql2, // 👈 Pastikan ini ada!
   logging: console.log("Database connected"),
 });
 
