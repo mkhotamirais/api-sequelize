@@ -2,7 +2,7 @@ import { Tags } from "./models.js";
 
 export const createTag = async (req, res) => {
   const { name } = req.body;
-  console.log(req.body);
+
   if (!name) return res.status(400).json({ error: `Name is required!` });
 
   try {
