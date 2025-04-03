@@ -43,7 +43,7 @@ app.use(express.static(path.join(dirName, "public")));
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-  res.send("Api Sequelizee");
+  res.send("Api Sequelize");
 });
 
 app.use("/api-sequelize/v1", v1Router);
